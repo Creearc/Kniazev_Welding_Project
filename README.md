@@ -1,4 +1,6 @@
 # Kniazev_Welding_Project
+Паспорт специальности:
+https://docs.google.com/document/d/1_D_QbrmjIXhqQhIeWMiDozkzsLukxNCC/edit
 
 Формула специальности.
 Выдержки из формулы специальности.
