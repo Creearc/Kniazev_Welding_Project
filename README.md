@@ -2,6 +2,10 @@
 Паспорт специальности:
 https://docs.google.com/document/d/1_D_QbrmjIXhqQhIeWMiDozkzsLukxNCC/edit
 
+
+Объявления о защитах диссертаций:
+https://pstu.ru/title1/soviets/disertations/
+
 Формула специальности.
 Выдержки из формулы специальности.
 Автореферат.
