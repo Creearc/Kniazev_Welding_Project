@@ -1,2 +1,9 @@
+Статьи
 https://www.springerprofessional.de/en/an-artificial-neural-network-approach-for-parametric-study-on-we/20090700?searchResult=1.welding%20neural%20network&searchBackButton=true
 https://www.springerprofessional.de/en/research-on-recognition-methods-of-spot-welding-surface-appearan/20095438?searchResult=2.welding%20neural%20network&searchBackButton=true
+
+
+
+Патенты
+https://elibrary.ru/item.asp?id=47992056
+https://elibrary.ru/item.asp?id=44486333
