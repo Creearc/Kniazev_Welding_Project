@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://malakar-soham.medium.com/media/61bc52c6836f523c692f4b923d6af61b -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Repo: https://github.com/malakar-soham/cnn-in-welding – Medium</title><meta name="description" content="You can&#39;t perform that action at this time. You signed in with another tab or window. You signed out in another tab or window. Reload to refresh your session. Reload to refresh your session."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./474d444545df86d850c956b7d29cbf76.js.Без названия" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-549f23051d8d.css"><div id="gist104276412" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-cnn-in-welding_test-py" class="file my-2">
+    
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-python  ">
+
+        
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+
+  <template class="js-file-alert-template"></template>
+<template class="js-line-alert-template"></template>
+
+  <table data-hpc="" class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="Python" data-tagsearch-path="cnn-in-welding_test.py">
+        <tbody><tr>
+          <td id="file-cnn-in-welding_test-py-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+          <td id="file-cnn-in-welding_test-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-s1">numpy</span> <span class="pl-k">as</span> <span class="pl-s1">np</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+          <td id="file-cnn-in-welding_test-py-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-s1">cv2</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+          <td id="file-cnn-in-welding_test-py-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">from</span> <span class="pl-s1">google</span>.<span class="pl-s1">colab</span>.<span class="pl-s1">patches</span> <span class="pl-k">import</span> <span class="pl-s1">cv2_imshow</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+          <td id="file-cnn-in-welding_test-py-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-s1">os</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+          <td id="file-cnn-in-welding_test-py-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-s1">random</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+          <td id="file-cnn-in-welding_test-py-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-s1">tensorflow</span> <span class="pl-k">as</span> <span class="pl-s1">tf</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+          <td id="file-cnn-in-welding_test-py-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+          <td id="file-cnn-in-welding_test-py-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+          <td id="file-cnn-in-welding_test-py-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">h</span>,<span class="pl-s1">w</span> <span class="pl-c1">=</span> <span class="pl-c1">512</span>,<span class="pl-c1">512</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+          <td id="file-cnn-in-welding_test-py-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">num_cases</span> <span class="pl-c1">=</span> <span class="pl-c1">10</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+          <td id="file-cnn-in-welding_test-py-LC11" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+          <td id="file-cnn-in-welding_test-py-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">images</span> <span class="pl-c1">=</span> []</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+          <td id="file-cnn-in-welding_test-py-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">labels</span> <span class="pl-c1">=</span> []</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+          <td id="file-cnn-in-welding_test-py-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+          <td id="file-cnn-in-welding_test-py-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">files</span> <span class="pl-c1">=</span> <span class="pl-s1">os</span>.<span class="pl-en">listdir</span>(<span class="pl-s">'./dataset/images/'</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+          <td id="file-cnn-in-welding_test-py-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">random</span>.<span class="pl-en">shuffle</span>(<span class="pl-s1">files</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
+          <td id="file-cnn-in-welding_test-py-LC17" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
+          <td id="file-cnn-in-welding_test-py-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-s1">tf</span>.<span class="pl-s1">keras</span>.<span class="pl-s1">models</span>.<span class="pl-en">load_model</span>(<span class="pl-s">'my_model'</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
+          <td id="file-cnn-in-welding_test-py-LC19" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
+          <td id="file-cnn-in-welding_test-py-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">lowSevere</span> <span class="pl-c1">=</span> <span class="pl-c1">1</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
+          <td id="file-cnn-in-welding_test-py-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">midSevere</span> <span class="pl-c1">=</span> <span class="pl-c1">2</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
+          <td id="file-cnn-in-welding_test-py-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">highSevere</span> <span class="pl-c1">=</span> <span class="pl-c1">4</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L23" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23"></td>
+          <td id="file-cnn-in-welding_test-py-LC23" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L24" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24"></td>
+          <td id="file-cnn-in-welding_test-py-LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-k">for</span> <span class="pl-s1">f</span> <span class="pl-c1">in</span> <span class="pl-s1">files</span>[<span class="pl-c1">0</span>:<span class="pl-s1">num_cases</span>]:</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L25" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25"></td>
+          <td id="file-cnn-in-welding_test-py-LC25" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">test_img</span> <span class="pl-c1">=</span> <span class="pl-s1">cv2</span>.<span class="pl-en">imread</span>(<span class="pl-s">'./dataset/images/'</span> <span class="pl-c1">+</span> <span class="pl-s1">f</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L26" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26"></td>
+          <td id="file-cnn-in-welding_test-py-LC26" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">resized_img</span> <span class="pl-c1">=</span> <span class="pl-s1">cv2</span>.<span class="pl-en">resize</span>(<span class="pl-s1">test_img</span>,(<span class="pl-s1">w</span>,<span class="pl-s1">h</span>))</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L27" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27"></td>
+          <td id="file-cnn-in-welding_test-py-LC27" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">resized_img</span> <span class="pl-c1">=</span> <span class="pl-s1">resized_img</span><span class="pl-c1">/</span><span class="pl-c1">255</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L28" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28"></td>
+          <td id="file-cnn-in-welding_test-py-LC28" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">cropped_img</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">reshape</span>(<span class="pl-s1">resized_img</span>,</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L29" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29"></td>
+          <td id="file-cnn-in-welding_test-py-LC29" class="blob-code blob-code-inner js-file-line">          (<span class="pl-c1">1</span>,<span class="pl-s1">resized_img</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">0</span>],<span class="pl-s1">resized_img</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">1</span>],<span class="pl-s1">resized_img</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">2</span>]))</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L30" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30"></td>
+          <td id="file-cnn-in-welding_test-py-LC30" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L31" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31"></td>
+          <td id="file-cnn-in-welding_test-py-LC31" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">test_out</span> <span class="pl-c1">=</span> <span class="pl-s1">model</span>.<span class="pl-en">predict</span>(<span class="pl-s1">cropped_img</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L32" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32"></td>
+          <td id="file-cnn-in-welding_test-py-LC32" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L33" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33"></td>
+          <td id="file-cnn-in-welding_test-py-LC33" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">test_out</span> <span class="pl-c1">=</span> <span class="pl-s1">test_out</span>[<span class="pl-c1">0</span>,:,:,<span class="pl-c1">0</span>]<span class="pl-c1">*</span><span class="pl-c1">1000</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L34" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34"></td>
+          <td id="file-cnn-in-welding_test-py-LC34" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">test_out</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">clip</span>(<span class="pl-s1">test_out</span>,<span class="pl-c1">0</span>,<span class="pl-c1">255</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L35" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="35"></td>
+          <td id="file-cnn-in-welding_test-py-LC35" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L36" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="36"></td>
+          <td id="file-cnn-in-welding_test-py-LC36" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">resized_test_out</span> <span class="pl-c1">=</span> <span class="pl-s1">cv2</span>.<span class="pl-en">resize</span>(<span class="pl-s1">test_out</span>,(<span class="pl-s1">test_img</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">1</span>],<span class="pl-s1">test_img</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">0</span>]))</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L37" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="37"></td>
+          <td id="file-cnn-in-welding_test-py-LC37" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">resized_test_out</span> <span class="pl-c1">=</span> <span class="pl-s1">resized_test_out</span>.<span class="pl-en">astype</span>(<span class="pl-s1">np</span>.<span class="pl-s1">uint16</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L38" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="38"></td>
+          <td id="file-cnn-in-welding_test-py-LC38" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L39" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="39"></td>
+          <td id="file-cnn-in-welding_test-py-LC39" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">test_img</span> <span class="pl-c1">=</span> <span class="pl-s1">test_img</span>.<span class="pl-en">astype</span>(<span class="pl-s1">np</span>.<span class="pl-s1">uint16</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L40" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="40"></td>
+          <td id="file-cnn-in-welding_test-py-LC40" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L41" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="41"></td>
+          <td id="file-cnn-in-welding_test-py-LC41" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">grey</span> <span class="pl-c1">=</span> <span class="pl-s1">cv2</span>.<span class="pl-en">cvtColor</span>(<span class="pl-s1">test_img</span>, <span class="pl-s1">cv2</span>.<span class="pl-v">COLOR_BGR2GRAY</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L42" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="42"></td>
+          <td id="file-cnn-in-welding_test-py-LC42" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L43" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="43"></td>
+          <td id="file-cnn-in-welding_test-py-LC43" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">test_img</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">0</span>]):</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L44" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="44"></td>
+          <td id="file-cnn-in-welding_test-py-LC44" class="blob-code blob-code-inner js-file-line">     <span class="pl-k">for</span> <span class="pl-s1">j</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">test_img</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">1</span>]):</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L45" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="45"></td>
+          <td id="file-cnn-in-welding_test-py-LC45" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">if</span>(<span class="pl-s1">grey</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>]<span class="pl-c1">&gt;</span><span class="pl-c1">150</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>]<span class="pl-c1">&gt;</span><span class="pl-c1">40</span>):</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L46" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46"></td>
+          <td id="file-cnn-in-welding_test-py-LC46" class="blob-code blob-code-inner js-file-line">            <span class="pl-s1">test_img</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>,<span class="pl-c1">1</span>]<span class="pl-c1">=</span><span class="pl-s1">test_img</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>,<span class="pl-c1">1</span>] <span class="pl-c1">+</span> <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>]</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L47" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="47"></td>
+          <td id="file-cnn-in-welding_test-py-LC47" class="blob-code blob-code-inner js-file-line">            <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>] <span class="pl-c1">=</span> <span class="pl-s1">lowSevere</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L48" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="48"></td>
+          <td id="file-cnn-in-welding_test-py-LC48" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">elif</span>(<span class="pl-s1">grey</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>]<span class="pl-c1">&lt;</span><span class="pl-c1">100</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>]<span class="pl-c1">&gt;</span><span class="pl-c1">40</span>):</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L49" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="49"></td>
+          <td id="file-cnn-in-welding_test-py-LC49" class="blob-code blob-code-inner js-file-line">            <span class="pl-s1">test_img</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>,<span class="pl-c1">2</span>]<span class="pl-c1">=</span><span class="pl-s1">test_img</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>,<span class="pl-c1">2</span>] <span class="pl-c1">+</span> <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>]</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L50" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="50"></td>
+          <td id="file-cnn-in-welding_test-py-LC50" class="blob-code blob-code-inner js-file-line">            <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>] <span class="pl-c1">=</span> <span class="pl-s1">highSevere</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L51" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="51"></td>
+          <td id="file-cnn-in-welding_test-py-LC51" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">elif</span>(<span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>]<span class="pl-c1">&gt;</span><span class="pl-c1">40</span>):</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L52" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="52"></td>
+          <td id="file-cnn-in-welding_test-py-LC52" class="blob-code blob-code-inner js-file-line">            <span class="pl-s1">test_img</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>,<span class="pl-c1">0</span>]<span class="pl-c1">=</span><span class="pl-s1">test_img</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>,<span class="pl-c1">0</span>] <span class="pl-c1">+</span> <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>]</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L53" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="53"></td>
+          <td id="file-cnn-in-welding_test-py-LC53" class="blob-code blob-code-inner js-file-line">            <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>] <span class="pl-c1">=</span> <span class="pl-s1">midSevere</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L54" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="54"></td>
+          <td id="file-cnn-in-welding_test-py-LC54" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">else</span>:</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L55" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="55"></td>
+          <td id="file-cnn-in-welding_test-py-LC55" class="blob-code blob-code-inner js-file-line">            <span class="pl-s1">resized_test_out</span>[<span class="pl-s1">i</span>,<span class="pl-s1">j</span>] <span class="pl-c1">=</span> <span class="pl-c1">0</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L56" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="56"></td>
+          <td id="file-cnn-in-welding_test-py-LC56" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L57" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="57"></td>
+          <td id="file-cnn-in-welding_test-py-LC57" class="blob-code blob-code-inner js-file-line">    <span class="pl-v">M</span> <span class="pl-c1">=</span> <span class="pl-s1">cv2</span>.<span class="pl-en">moments</span>(<span class="pl-s1">resized_test_out</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L58" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="58"></td>
+          <td id="file-cnn-in-welding_test-py-LC58" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">maxMomentArea</span> <span class="pl-c1">=</span> <span class="pl-s1">resized_test_out</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">1</span>]<span class="pl-c1">*</span><span class="pl-s1">resized_test_out</span>.<span class="pl-s1">shape</span>[<span class="pl-c1">0</span>]<span class="pl-c1">*</span><span class="pl-s1">highSevere</span></td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L59" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="59"></td>
+          <td id="file-cnn-in-welding_test-py-LC59" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">print</span>(<span class="pl-s">"0th Moment = "</span> , (<span class="pl-v">M</span>[<span class="pl-s">"m00"</span>]<span class="pl-c1">*</span><span class="pl-c1">100</span><span class="pl-c1">/</span><span class="pl-s1">maxMomentArea</span>), <span class="pl-s">"%"</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L60" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="60"></td>
+          <td id="file-cnn-in-welding_test-py-LC60" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L61" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="61"></td>
+          <td id="file-cnn-in-welding_test-py-LC61" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">test_img</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">clip</span>(<span class="pl-s1">test_img</span>,<span class="pl-c1">0</span>,<span class="pl-c1">255</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L62" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="62"></td>
+          <td id="file-cnn-in-welding_test-py-LC62" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L63" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="63"></td>
+          <td id="file-cnn-in-welding_test-py-LC63" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">test_img</span> <span class="pl-c1">=</span> <span class="pl-s1">test_img</span>.<span class="pl-en">astype</span>(<span class="pl-s1">np</span>.<span class="pl-s1">uint8</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L64" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="64"></td>
+          <td id="file-cnn-in-welding_test-py-LC64" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L65" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="65"></td>
+          <td id="file-cnn-in-welding_test-py-LC65" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">cv2_imshow</span>(<span class="pl-s1">test_img</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L66" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="66"></td>
+          <td id="file-cnn-in-welding_test-py-LC66" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-cnn-in-welding_test-py-L67" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="67"></td>
+          <td id="file-cnn-in-welding_test-py-LC67" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">cv2</span>.<span class="pl-en">waitKey</span>(<span class="pl-c1">0</span>)</td>
+        </tr>
+  </tbody></table>
+</div>
+
+
+    </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/malakar-soham/474d444545df86d850c956b7d29cbf76/raw/e0badb19d1cede68fd81a04395d9a387774c729b/cnn-in-welding_test.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/malakar-soham/474d444545df86d850c956b7d29cbf76#file-cnn-in-welding_test-py">
+          cnn-in-welding_test.py
+        </a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height);var elements = document.getElementsByClassName("gist-data"); for (var i = 0; i < elements.length; i++) {elements[i].style.overflow = "visible"}resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script><script defer="" src="./v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon="{&quot;rayId&quot;:&quot;738b1dd8dfd57b17&quot;,&quot;token&quot;:&quot;0b5f665943484354a59c39c6833f7078&quot;,&quot;version&quot;:&quot;2022.6.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+</body></html>
